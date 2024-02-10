@@ -46,6 +46,7 @@ public class SpellChecker {
 	}
 
 	public static String spellChecker(String word, int threshold, String[] dictionary) {
+		// #feedback - you can avoid creating an array, which is additional memory, by doing the comparison to min distance in place for every word in dictionary.
 		int[] distanceArr = new int[dictionary.length];
 		for (int i = 0; i < distanceArr.length; i++) { // Calculating a new array with lev's distance values
 			distanceArr[i] = levenshtein(word, dictionary[i]);
